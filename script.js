@@ -146,53 +146,53 @@ const gamePlay = (function() {
 
 
   function findWinningPathPlayerA() {
-    if ((array[0] == x) && (array[1] == x) && (array[2] == '') && (path == ''))
+    if ((array[0] === x) && (array[1] === x) && (array[2] === '') && (path === ''))
     {path = 2;}
-    if ((array[0] == x) && (array[1] == '') && (array[2] == x) && (path == ''))
+    if ((array[0] === x) && (array[1] === '') && (array[2] === x) && (path === ''))
     {path = 1;}
-    if ((array[0] == '') && (array[1] == x) && (array[2] == x) && (path == ''))
+    if ((array[0] === '') && (array[1] === x) && (array[2] == x) && (path === ''))
     {path = 0;} 
-    if ((array[0] == x) && (array[3] == x) && (array[6] == '') && (path == ''))
+    if ((array[0] === x) && (array[3] === x) && (array[6] == '') && (path === ''))
     {path = 6;}
-    if ((array[0] == x) && (array[3] == '') && (array[6] == x) && (path == ''))
+    if ((array[0] === x) && (array[3] === '') && (array[6] == x) && (path === ''))
     {path = 3;}
-    if ((array[0] == '') && (array[3] == x) && (array[6] == x) && (path == ''))
+    if ((array[0] === '') && (array[3] === x) && (array[6] == x) && (path === ''))
     {path = 0;}
-    if ((array[0] == x) && (array[4] == x) && (array[8] == '') && (path == ''))
+    if ((array[0] === x) && (array[4] === x) && (array[8] == '') && (path === ''))
     {path = 8;}
-    if ((array[0] == x) && (array[4] == '') && (array[8] == x) && (path == ''))
+    if ((array[0] === x) && (array[4] === '') && (array[8] == x) && (path === ''))
     {path = 4;}
-    if ((array[0] == '') && (array[4] == x) && (array[8] == x) && (path == ''))
+    if ((array[0] === '') && (array[4] === x) && (array[8] == x) && (path === ''))
     {path = 0;}
-    if ((array[1] == x) && (array[4] == x) && (array[8] == '') && (path == ''))
+    if ((array[1] === x) && (array[4] === x) && (array[8] == '') && (path === ''))
     {path = 8;}
-    if ((array[1] == x) && (array[4] == '') && (array[8] == x) && (path == ''))
+    if ((array[1] === x) && (array[4] === '') && (array[8] == x) && (path === ''))
     {path = 4;}
-    if ((array[1] == '') && (array[4] == x) && (array[8] == x) && (path == ''))
+    if ((array[1] === '') && (array[4] === x) && (array[8] == x) && (path === ''))
     {path = 1;}
-    if ((array[3] == x) && (array[4] == x) && (array[5] == '') && (path == ''))
+    if ((array[3] === x) && (array[4] === x) && (array[5] == '') && (path === ''))
     {path = 5;}
-    if ((array[3] == x) && (array[4] == '') && (array[5] == x) && (path == ''))
+    if ((array[3] === x) && (array[4] === '') && (array[5] == x) && (path === ''))
     {path = 4;}
-    if ((array[3] == '') && (array[4] == x) && (array[5] == x) && (path == ''))
+    if ((array[3] === '') && (array[4] === x) && (array[5] == x) && (path === ''))
     {path = 3;}
-    if ((array[6] == x) && (array[7] == x) && (array[8] == '') && (path == ''))
+    if ((array[6] === x) && (array[7] === x) && (array[8] == '') && (path === ''))
     {path = 8;}
-    if ((array[6] == x) && (array[7] == '') && (array[8] == x) && (path == ''))
+    if ((array[6] === x) && (array[7] === '') && (array[8] == x) && (path === ''))
     {path = 7;}
-    if ((array[6] == '') && (array[7] == x) && (array[8] == x) && (path == ''))
+    if ((array[6] === '') && (array[7] === x) && (array[8] == x) && (path === ''))
     {path = 6;}
-    if ((array[2] == x) && (array[5] == x) && (array[8] == '') && (path == ''))
+    if ((array[2] === x) && (array[5] === x) && (array[8] == '') && (path === ''))
     {path = 8;}
-    if ((array[2] == x) && (array[5] == '') && (array[8] == x) && (path == ''))
+    if ((array[2] === x) && (array[5] === '') && (array[8] == x) && (path === ''))
     {path = 5;}
-    if ((array[2] == '') && (array[5] == x) && (array[8] == x) && (path == ''))
+    if ((array[2] === '') && (array[5] === x) && (array[8] == x) && (path === ''))
     {path = 2;}
-    if ((array[6] == x) && (array[4] == x) && (array[2] == '') && (path == ''))
+    if ((array[6] === x) && (array[4] === x) && (array[2] == '') && (path === ''))
     {path = 2;}
-    if ((array[6] == x) && (array[4] == '') && (array[2] == x) && (path == ''))
+    if ((array[6] === x) && (array[4] === '') && (array[2] == x) && (path === ''))
     {path = 4;}
-    if ((array[6] == '') && (array[4] == x) && (array[2] == x) && (path == ''))
+    if ((array[6] === '') && (array[4] === x) && (array[2] == x) && (path === ''))
     {path = 6;}
   }
 
@@ -246,59 +246,59 @@ const gamePlay = (function() {
     if ((array[6] == '') && (array[4] == o) && (array[2] == o) && (path == ''))
     {path = 6;}    
   }
-
+console.log(0 === '');
   function checkSquareAvailability() {
-    if ((path == 0) && array[0] == '') {
+    if ((path === 0) && array[0] == '') {
       if (human = true) {array[0] = x}
       if (human = false) {array[0] = o}
       moveStatus = true;
       console.log('path 0');
     }
-    if ((path == 1) && array[1] == '') {
+    if ((path === 1) && array[1] == '') {
       if (human = true) {array[1] = x}
       if (human = false) {array[1] = o}
       moveStatus = true;
       console.log('path 1');
     }
-    if ((path == 2) && array[2] == '') {
+    if ((path === 2) && array[2] == '') {
       if (human = true) {array[2] = x}
       if (human = false) {array[2] = o}
       moveStatus = true;
       console.log('path 2');
     }
-    if ((path == 3) && array[3] == '') {
-      if (human = true) {array[3] = x}
-      if (human = false) {array[3] = o}
+    if ((path === 3) && array[3] == '') {
+      if (human == true) {array[3] = x}
+      if (human == false) {array[3] = o}
       moveStatus = true;
       console.log('path 3');
     }
-    if ((path == 4) && array[4] == '') {
-      if (human = true) {array[4] = x}
-      if (human = false) {array[4] = o}
+    if ((path === 4) && array[4] == '') {
+      if (human == true) {array[4] = x}
+      if (human == false) {array[4] = o}
       moveStatus = true;
       console.log('path 4');
     }
-    if ((path == 5) && array[5] == '') {
-      if (human = true) {array[5] = x}
-      if (human = false) {array[5] = o}
+    if ((path === 5) && array[5] == '') {
+      if (human == true) {array[5] = x}
+      if (human == false) {array[5] = o}
       moveStatus = true;
       console.log('path 5');
     }
-    if ((path == 6) && array[6] == '') {
-      if (human = true) {array[6] = x}
-      if (human = false) {array[6] = o}
+    if ((path === 6) && array[6] == '') {
+      if (human == true) {array[6] = x}
+      if (human == false) {array[6] = o}
       moveStatus = true;
       console.log('path 6');
     }
-    if ((path == 7) && array[7] == '') {
+    if ((path === 7) && array[7] == '') {
       if (human = true) {array[7] = x}
       if (human = false) {array[7] = o}
       moveStatus = true;
       console.log('path 7');
     }
-    if ((path == 8) && array[8] == '') {
-      if (human = true) {array[8] = x}
-      if (human = false) {array[8] = o}
+    if ((path === 8) && array[8] == '') {
+      if (human == true) {array[8] = x}
+      if (human == false) {array[8] = o}
       moveStatus = true;
       console.log('path 8');
     }
@@ -339,36 +339,52 @@ const gamePlay = (function() {
       determineWinner();  // check if there's a winner
     }
     if (gameOver == false) {
+      //computerChoice();
       computerChoice();
+      //drawOnBoard(gridItems[path], mark);
     }
   }
 
-let ranNum = 0;
+
+  let ranNum = 0;
   function computerChoice() {
+         
     human = false;
     path = '';
     moveStatus = false;
     playerA.mark = x;
     playerB.mark = o;
-    console.log(moveStatus);
     currentPlayer = determineCurrentPlayer();
     mark = currentPlayer.mark;
+    let promise = new Promise(() => {
 
-    //checkSquareAvailability();
-    while (!moveStatus) {    
-      ranNum = Math.floor(Math.random() * Gameboard.board.length);  // 0 - 8
-      path = ranNum;
-      //console.log('path ' + path);
-      findWinningPathPlayerA();
       findWinningPathPlayerB();
-      checkSquareAvailability();
-      
-    }
-    array[path] = mark;
-    drawOnBoard(gridItems[path], mark);
-    turn++;
-    determineWinner();
+      findWinningPathPlayerA();
+
+        checkSquareAvailability();
+        console.log(Gameboard.board);
+
+        while (!moveStatus) {    
+          ranNum = Math.floor(Math.random() * Gameboard.board.length);  // 0 - 8
+          console.log(ranNum);
+          path = ranNum;
+          checkSquareAvailability();
+          console.log(gridItems[path]);
+        }
+
+        array[path] = mark;
+        
+        
+        
+        turn++;
+        determineWinner();   
+    });
+
+    promise.then(drawOnBoard(gridItems[path], mark));
+
   }
+
+
 
   function updateScore() {
     const aPlayerScore = document.getElementById('playerA');
@@ -465,7 +481,7 @@ let ranNum = 0;
     // playerA,
     // playerB,
     playGame,
-    gameOver
+    Gameboard,
   };
 })();
 
