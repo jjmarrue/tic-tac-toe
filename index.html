@@ -26,16 +26,12 @@
         <span style="--i:11">e</span>
       </h1>
     </div>
-
-
     <div class="controls">
       <div class="open-form btn">
         <a href="#form-popup" >New Game</a>
       </div>
       <button class="btn" id="clear">Clear Board</button>
-    </div>
-
-    
+    </div>   
       <div class="grid">
         <div class="grid-item" id="0"></div>
         <div class="grid-item" id="1"></div>
@@ -47,16 +43,14 @@
         <div class="grid-item" id="7"></div>
         <div class="grid-item" id="8"></div>
       </div>
-
-      <div class="scores">
-        <div class="score-info" id="playingX">
-          <p>Playing Xs:</p><p><span class ="playerNames" id="playerAName"></span> <span class="playerScores" id="playerA"></span></p>   
-        </div>
-        <div class="score-info" id="playingO">
-          <p>Playing Os:</p><p><span class ="playerNames" id="playerBName"></span> <span class="playerScores" id="playerB"></span></p>         
-        </div>
+    <div class="scores">
+      <div class="score-info" id="playingX">
+        <p>Playing Xs:</p><p><span class ="playerNames" id="playerAName"></span> <span class="playerScores" id="playerA"></span></p>   
       </div>
-
+      <div class="score-info" id="playingO">
+        <p>Playing Os:</p><p><span class ="playerNames" id="playerBName"></span> <span class="playerScores" id="playerB"></span></p>         
+      </div>
+    </div>
     <div class="overlay" id="form-popup">
       <div class="form-container">
         <form id="submission-form" method="" action="">
@@ -66,11 +60,11 @@
               <legend>Select a game type</legend>
               <div>
                 <div>
-                  <input type="radio" id="hvh" value="hvh" name="game-type" checked>
+                  <input type="radio" id="hvh" value="hvh" name="game-type">
                   <label for="hvh">Human vs Human<span class="req"></span></label>
                 </div>
                 <div>
-                  <input type="radio" id="hvr" value="hvr" name="game-type">
+                  <input type="radio" id="hvr" value="hvr" name="game-type" checked>
                   <label for="hvr">Human vs Robot<span class="req"></span></label>
                 </div>
               </div>
