@@ -132,7 +132,7 @@ const gamePlay = (function() {
     gameOver = false;
     turn = 1;
     // computer plays first on even games
-    if (gameCounter % 2 == 0) {
+    if (gameType == 2 && gameCounter % 2 == 0) {
       computerChoice();
     }
   }
