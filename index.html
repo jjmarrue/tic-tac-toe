@@ -61,12 +61,26 @@
       <div class="form-container">
         <form id="submission-form" method="" action="">
           <a class="close" href="#">&times;</a>
-          <div class="form-section">
+
+          <div class="form-section"> 
+            <fieldset>
+              <legend>Select a game type</legend>
+
+              <input type="radio" id="hvh" value="hvh" name="game-type" checked>
+              <label for="hvh">Human vs Human<span class="req"></span></label>
+
+              <input type="radio" id="hvr" value="hvr" name="game-type">
+              <label for="hvr">Human vs Robot<span class="req"></span></label>
+
+            </fieldset>
+          </div>
+
+          <div class="form-section" id="first">
             <label for="player1">Playing Xs<span class="req"></span></label>
             <input type="text" id="player1" name="player1-name">
             <p class="error" id="player1-error"></p>
           </div>
-          <div class="form-section">
+          <div class="form-section hidden" id="second">
             <label for="player2">Playing Os<span class="req"></span></label>
             <input type="text" id="player2" name="player2-name">
             <p class="error" id="player2-error"></p>
