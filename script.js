@@ -1,5 +1,4 @@
 const gamePlay = (function() {
-  const grid = document.querySelector('.grid');
   const gridItems = document.querySelectorAll('.grid-item');
   const clearBtn = document.getElementById('clear');
   const startBtn = document.getElementById('start');
@@ -11,6 +10,7 @@ const gamePlay = (function() {
   let playerB = {};
   let currentPlayer = '';
   let turn = 1;
+  let gameType = 1; // 1 -> human vs bot, 2 -> human vs human
   let gameCounter = 1;
   const x = 'X';
   const o = 'O';
@@ -100,9 +100,12 @@ const gamePlay = (function() {
   function getPlayerNames() {
     let player1Name = document.getElementById('player1').value;
     let player2Name = '';
+    // give bot a name if human vs bot
     if (document.getElementById('hvr').checked) {
-      player2Name = 'CeydaBot';
+      gameType = 2;
+      player2Name = 'J.A.D.A.';
     } else {
+      gameType = 1;
       player2Name = document.getElementById('player2').value;
     }  
     playerA = createPlayer(player1Name);
@@ -258,7 +261,6 @@ const gamePlay = (function() {
   function playerChoice() {
     playerA.mark = x;
     playerB.mark = o;
-    human = true;
     currentPlayer = determineCurrentPlayer();
     mark = currentPlayer.mark;
     if (array[this.id] == '' && gameOver == false) {
@@ -267,30 +269,25 @@ const gamePlay = (function() {
       turn++;
       determineWinner();  // check if there's a winner
     }
-    if (gameOver == false) {computerChoice()};
+    if (gameType == 2 && gameOver == false) {computerChoice()};
   }
 
-  
   function computerChoice() {
     let ranNum = 0;   
-    human = false;
     path = '';
     moveStatus = false;
-    playerA.mark = x;
-    playerB.mark = o;
     currentPlayer = determineCurrentPlayer();
     mark = currentPlayer.mark;
 
     findWinningPathPlayerB();
     findWinningPathPlayerA();
     checkSquareAvailability();
-    console.log(gridItems[path]);
 
     while (!moveStatus) {    
       ranNum = Math.floor(Math.random() * Gameboard.board.length);  // 0 - 8
       path = ranNum;
       checkSquareAvailability();
-      console.log(gridItems[path]);
+      // console.log(gridItems[path]);
     }
     array[path] = mark;
     drawOnBoard(gridItems[path], mark);
@@ -308,24 +305,16 @@ const gamePlay = (function() {
   function determineWinner() {
     const isBoardEmpty = (currentValue) => currentValue != '';
     const winningConditions = {
-      // winning scenario 1
       win1: (array[0] != '' && array[0] == array[4] && array[4] == array[8]),
-      // winning scenario 2
       win2: (array[2] != '' && array[2] == array[4] && array[4] == array[6]),
-      // winning scenario 3
       win3: (array[3] != '' && array[3] == array[4] && array[4] == array[5]),
-      // winning scenario 4
       win4: (array[0] != '' && array[0] == array[1] && array[1] == array[2]),
-      // winning scenario 5
       win5: (array[2] != '' && array[2] == array[5] && array[5] == array[8]),
-      // winning scenario 6
       win6: (array[6] != '' && array[6] == array[7] && array[7] == array[8]),
-      // winning scenario 7
       win7: (array[0] != '' && array[0] == array[3] && array[3] == array[6]),
-      // winning scenario 8
       win8: (array[1] != '' && array[1] == array[4] && array[4] == array[7]),
     }
-
+    // declare a winner if any of the winning scenrarios are met
     for (const prop in winningConditions) {
       if (winningConditions[prop]) {
         currentPlayer.score += 1;
@@ -345,6 +334,7 @@ const gamePlay = (function() {
   }
 
   function enableBoard() {
+    const grid = document.querySelector('.grid');
     if (gameOver) {
       grid.classList.remove('enable');
     } else {
@@ -373,6 +363,8 @@ const gamePlay = (function() {
     }
   }
 
+  // initialize game
+
   function playGame() {
     hideForm();
     gameOver = false;
@@ -383,8 +375,8 @@ const gamePlay = (function() {
   }
 
   return {
-    playGame,
-    Gameboard,
+    //playGame,
+    //Gameboard,
   };
 })();
 
