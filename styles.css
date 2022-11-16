@@ -114,9 +114,9 @@ h1 {
   box-shadow: 1px 2px 3px 1px rgba(63, 63, 55,0.15);
 }
 
-.btn:hover,
-#clear:hover {
-  box-shadow: 1px 2px 3px 1px rgba(63, 63, 55,0.55);
+.btn:active {
+  box-shadow: inset 0px 0px 5px rgba(63, 63, 55,0.25);
+  outline: none;
 }
 
 /************** Board Styles ****************/
@@ -263,18 +263,27 @@ h1 {
   color: var(--clear-btn-bg);
 }
 
-input,
-select {
+input[type="text"],
+select,
+fieldset>div {
   outline: 0;
   display: block;
   width: 100%;
   border: 1px solid white;
-  background-color: white;
+  /* background-color: white; */
   border-radius: 5px;
   padding: 5px;
   margin-top: 8px;
   box-shadow: 1px 2px 3px 1px rgba(63, 63, 55,0.15);
   font-size: 1rem;
+}
+
+fieldset {
+  border: none;
+}
+
+fieldset div:first-child {
+  padding-bottom: 14px;
 }
 
 
